@@ -25,6 +25,46 @@ p {
 }
 
 
+/* QUESTION STYLING */
+qBox {
+    border: 1px;
+    border-color: grey;
+    border-radius: 16px;
+    
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    min-height: max-content;
+    min-width: max-content;
+}
+
+qTitle {
+    font-size: medium;
+    color: black;
+}
+
+qDescription {
+    font-size: small;
+    color: gray;
+}
+
+qOptions {
+    border-radius: 50%;
+    align-content: center;
+}
+
+qOptionsGreen {
+    background-color: green;
+}
+
+qOptionsRed {
+    background-color: red;
+}
+
+
+
 /* HEADER/FOOTER */
 header {
     font-size: large;
