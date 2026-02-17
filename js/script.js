@@ -43,7 +43,21 @@ const scores = {
 
 /* QUESTION DISPLAYS/FUNCTIONS */
 function showQuestion() {
-    document.getElementById("questionText").textContent = questions[index].text;
+    const q = questions[index];
+
+    document.getElementById("questionBox").innerHTML = `
+        <div class="qBox">
+            <div class="qTitle">${q.text}</div>
+
+            <div class="qOptionsRow">
+                <button class="qOptions qOptionsRed" onclick="answer('1')">1</button>
+                <button class="qOptions" onclick="answer('2')">2</button>
+                <button class="qOptions" onclick="answer('3')">3</button>
+                <button class="qOptions" onclick="answer('4')">4</button>
+                <button class="qOptions qOptionsGreen" onclick="answer('5')">5</button>
+            </div>
+        </div>
+    `;
 }
 
 showQuestion()
