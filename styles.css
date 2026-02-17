@@ -30,7 +30,7 @@ qBox {
     border: 1px;
     border-color: grey;
     border-radius: 16px;
-    
+
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 2%;
@@ -48,6 +48,10 @@ qTitle {
 qDescription {
     font-size: small;
     color: gray;
+}
+
+qOptionsRow {
+    flex-direction: row;
 }
 
 qOptions {
