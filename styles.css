@@ -2,7 +2,7 @@
     min-height: 100vh;
 }
 
-/* General Styles */
+/* TYPOGRAPHY */
 
 h1 {
     font-size: large;
@@ -37,7 +37,7 @@ footer {
 }
 
 
-/* Question Process */
+/* QUESTION PROCESS */
 .questions {
     font-size: medium;
     color: blue;

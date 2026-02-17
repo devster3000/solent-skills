@@ -12,7 +12,17 @@
             <div id="header"></div>
 
             <main>
+                <div id="questionBox">
+                    <p id="questionText"></p>
 
+                    <button class="btn" onclick="answer('stronglyAgree')">Strongly Agree</button>
+                    <button class="btn"  onclick="answer('agree')">Agree</button>
+                    <button class="btn" onclick="answer('neutral')">Unsure</button>
+                    <button class="btn" onclick="answer('disagree')">Disagree</button>
+                    <button class="btn" onclick="answer('stronglyDisagree')">Strongly Disagree</button>
+                </div>
+
+                <div id="results" stlye="display:none;"></div>
             </main>
 
 
