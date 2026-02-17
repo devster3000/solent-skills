@@ -1,0 +1,63 @@
+.container {
+    min-height: 100vh;
+}
+
+/* General Styles */
+
+h1 {
+    font-size: large;
+    color: black;
+}
+
+h2 {
+    font-size: medium;
+    color: black;
+}
+
+h3 {
+    font-size: small;
+    color: black;
+}
+
+p {
+    font-size: small;
+    color: black;
+}
+
+
+/* === NAV === */
+nav {
+    min-height: 60px;
+    margin: 10px;
+    float: left;
+}
+
+nav img {
+    float: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+nav li {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 5px 15px;  
+    border-radius: 5px;
+    margin: 10px 0px 10px 10px;
+    line-height: 60px;
+}
+
+/* Question Process */
+.questions {
+    font-size: medium;
+    color: blue;
+}
+
+#question-format {
+
+}
