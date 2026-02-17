@@ -25,39 +25,20 @@ p {
 }
 
 
-/* === NAV === */
-nav {
-    min-height: 60px;
-    margin: 10px;
+/* HEADER/FOOTER */
+header {
+    font-size: large;
     float: left;
 }
 
-nav img {
+footer {
+    font-size: small;
     float: left;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-}
-
-nav li {
-    display: inline-block;
-    border: 1px solid black;
-    padding: 5px 15px;  
-    border-radius: 5px;
-    margin: 10px 0px 10px 10px;
-    line-height: 60px;
-}
 
 /* Question Process */
 .questions {
     font-size: medium;
     color: blue;
-}
-
-#question-format {
-
 }
