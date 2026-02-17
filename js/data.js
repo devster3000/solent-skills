@@ -81,7 +81,7 @@ const questions = [
     {
         id: 13,
         skill: "creativity",
-        quesiton: "I often come up with new ideas or ways to improve existing processes"
+        question: "I often come up with new ideas or ways to improve existing processes"
     },
     {
         id: 14,
