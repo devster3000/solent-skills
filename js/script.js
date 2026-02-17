@@ -50,11 +50,11 @@ function showQuestion() {
             <div class="qTitle">${q.text}</div>
 
             <div class="qOptionsRow">
-                <button class="qOptions qOptionsRed" onclick="answer('1')">1</button>
-                <button class="qOptions" onclick="answer('2')">2</button>
-                <button class="qOptions" onclick="answer('3')">3</button>
-                <button class="qOptions" onclick="answer('4')">4</button>
-                <button class="qOptions qOptionsGreen" onclick="answer('5')">5</button>
+                <button class="qOptions qOptionsGreen" onclick="answer(':D')">1</button>
+                <button class="qOptions qOptionsGreen" onclick="answer(':)')">2</button>
+                <button class="qOptions" onclick="answer(':|')">3</button>
+                <button class="qOptions qOptionsRed" onclick="answer(':(')">4</button>
+                <button class="qOptions qOptionsRed" onclick="answer('D:')">5</button>
             </div>
         </div>
     `;
