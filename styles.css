@@ -76,8 +76,9 @@ header {
 }
 
 footer {
+    background-color: black;
     font-size: small;
-    float: left;
+    align-items: center;
 }
 
 
