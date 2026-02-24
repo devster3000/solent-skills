@@ -8,8 +8,8 @@ body {
 }
 
 .container {
-    min-height: 100vh; /* keep your version */
-    max-width: 700px;  /* mobile-friendly width */
+    min-height: 100vh;
+    max-width: 700px;  /* mobile width */
     margin: auto;
     background: white;
     padding: 20px;
@@ -139,7 +139,7 @@ footer {
         padding: 10px;
         margin: 0;
         box-sizing: border-box;
-        
+
         font-size: 0.85rem;
     }
 
