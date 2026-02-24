@@ -11,15 +11,15 @@
 
 <body>
 
+<div id="header"></div>
 <div class="container">
-    <div id="header"></div>
 
     <div id="questionContainer"></div>
     <button id="submitBtn">Submit</button>
     <div id="result"></div>
 
-    <div id="footer"></div>
 </div>
+<div id="footer"></div>
 
 <script src="js/data.js"></script>
 
@@ -31,6 +31,9 @@
         if (!grouped[q.skill]) grouped[q.skill] = [];
         grouped[q.skill].push(q);
     });
+
+    /* STRING‑BASED SCALE */
+    const scale = ["Never", "Rarely", "Sometimes", "Often", "Always"];
 
     /* 2. Render them */
     const container = document.getElementById("questionContainer");
@@ -48,15 +51,15 @@
                 <p class="qTitle">${q.question}</p>
 
                 <div class="qOptionsRow">
-                    ${[1,2,3,4,5].map(num => `
+                    ${scale.map(label => `
                         <input 
                             type="radio" 
-                            id="q${q.id}_${num}" 
+                            id="q${q.id}_${label}" 
                             name="q${q.id}" 
-                            value="${num}"
+                            value="${label}"
                         >
-                        <label class="qOptions" for="q${q.id}_${num}">
-                            ${num}
+                        <label class="qOptions" for="q${q.id}_${label}">
+                            ${label}
                         </label>
                     `).join("")}
                 </div>

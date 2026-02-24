@@ -35,7 +35,6 @@ h3 {
 
 p {
     font-size: 1rem;
-    color: black;
 }
 
 
@@ -100,7 +99,14 @@ p {
 
 header {
     font-size: large;
-    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
 }
 
 footer {
@@ -108,6 +114,9 @@ footer {
     font-size: small;
     color: white;
     text-align: center;
+
+    border-radius: 8px;
+    margin-top: 12px;
     padding: 10px;
 }
 

@@ -44,7 +44,7 @@ const questions = [
     },
     {
         id: 7,
-        skill: "communcation",
+        skill: "communication",
         question: "I listen carefully to others before responding"
     },
     {
@@ -118,7 +118,7 @@ const questions = [
     },
     {
         id: 20,
-        skill: "organsiational_awareness",
+        skill: "organisational_awareness",
         question: "I can prioritise tasks based on urgency and importance"
     },
 
