@@ -1,11 +1,9 @@
-/* ==============
-   GLOBAL LAYOUT
-   ============== */
+
 
 body {
     margin: 0;
     font-family: system-ui, Arial, sans-serif;
-    background: #f2f2f2;
+    background: url('/assets/background.jpg');
     padding: 15px;
 }
 
@@ -19,10 +17,6 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.08);
 }
 
-
-/* =====================
-   TYPOGRAPHY (YOUR ORIGINAL)
-   ===================== */
 
 h1 {
     font-size: 1.8rem;
@@ -102,8 +96,6 @@ p {
 
 .qOptionsGreen { background-color: green; color: white; }
 .qOptionsRed { background-color: red; color: white; }
-
-
 
 
 header {
