@@ -110,9 +110,8 @@ header {
 }
 
 footer {
-    background-color: black;
+    background-color: white;
     font-size: small;
-    color: white;
     text-align: center;
 
     border-radius: 8px;

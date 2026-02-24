@@ -8,6 +8,7 @@ const skills_cluster = ["Digital & Digital Skills", "Communication & Interperson
 
 /* QUESTIONS */
 const questions = [
+    
     /* DIGITAL */
     {
         id: 1,
