@@ -1,75 +1,111 @@
-.container {
-    min-height: 100vh;
+/* ==============
+   GLOBAL LAYOUT
+   ============== */
+
+body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 15px;
 }
 
-/* TYPOGRAPHY */
+.container {
+    min-height: 100vh; /* keep your version */
+    max-width: 700px;  /* mobile-friendly width */
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+
+/* =====================
+   TYPOGRAPHY (YOUR ORIGINAL)
+   ===================== */
 
 h1 {
-    font-size: large;
+    font-size: 1.8rem;
     color: black;
 }
 
 h2 {
-    font-size: medium;
+    font-size: 1.4rem;
     color: black;
 }
 
 h3 {
-    font-size: small;
+    font-size: 1.2rem;
     color: black;
 }
 
 p {
-    font-size: small;
+    font-size: 1rem;
     color: black;
 }
 
 
-/* QUESTION STYLING */
+
 .qBox {
-    border: 1px;
-    border-color: grey;
-    border-radius: 16px;
+    margin: 20px 0;
+    padding: 15px;
+    background: #fafafa;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-
-    min-height: max-content;
-    min-width: max-content;
+    /* remove constraints */
+    min-height: unset;
+    min-width: unset;
 }
 
+/* Question Title */
 .qTitle {
-    font-size: medium;
-    color: black;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
+/* Optional description */
 .qDescription {
-    font-size: small;
+    font-size: 0.9rem;
     color: gray;
+    margin-bottom: 10px;
 }
+
 
 .qOptionsRow {
-    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.qOptionsRow input {
+    display: none;
 }
 
 .qOptions {
-    border-radius: 50%;
-    align-content: center;
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    margin: 0 4px;
+    border-radius: 8px;
+    background: #eee;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
 
-.qOptionsGreen {
-    background-color: green;
+.qOptionsRow input:checked + .qOptions {
+    background: #4CAF50;
+    color: white;
+    border-color: #3e9442;
 }
 
-.qOptionsRed {
-    background-color: red;
-}
+.qOptionsGreen { background-color: green; color: white; }
+.qOptionsRed { background-color: red; color: white; }
 
 
 
-/* HEADER/FOOTER */
+
 header {
     font-size: large;
     float: left;
@@ -78,12 +114,26 @@ header {
 footer {
     background-color: black;
     font-size: small;
-    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 10px;
 }
 
 
-/* QUESTION PROCESS */
 .questions {
     font-size: medium;
     color: blue;
+}
+
+
+
+@media (max-width: 480px) {
+
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+
+    .qOptions {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
 }
