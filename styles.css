@@ -132,8 +132,19 @@ footer {
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.2rem; }
 
+    
+
     .qOptions {
+        width: 100%;
         padding: 10px;
+        margin: 0;
+        box-sizing: border-box;
+        
         font-size: 0.85rem;
+    }
+
+    .qOptionsRow {
+        flex-direction: column;
+        gap: 8px;
     }
 }
