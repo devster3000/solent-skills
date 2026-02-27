@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 Not Found</title>
+<title>404 Terminal</title>
 <style>
   body {
     margin: 0;
@@ -12,25 +12,46 @@
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
   }
 
   .terminal {
-    max-width: 800px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-width: 600px;
     padding: 20px;
+    background: rgba(0,0,0,0.8);
+    border: 2px solid #00ff00;
+    border-radius: 5px;
   }
 
   .line {
     white-space: pre-wrap;
   }
 
+  .input-line {
+    display: flex;
+    align-items: center;
+  }
+
+  .prompt {
+    margin-right: 5px;
+  }
+
+  .cmd-input {
+    background: transparent;
+    border: none;
+    color: #00ff00;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    flex: 1;
+  }
+
   .cursor {
     display: inline-block;
     width: 10px;
     background-color: #00ff00;
-    margin-left: 5px;
     animation: blink 1s step-start infinite;
   }
 
@@ -40,11 +61,62 @@
 </style>
 </head>
 <body>
-  <div class="terminal">
-    <div class="line">C:\> _404_NOT_FOUND</div>
+  <div class="terminal" id="terminal">
+    <div class="line">user@solent:~$ 404 Not Found</div>
     <div class="line">The page you are looking for does not exist.</div>
-    <div class="line">Please check the URL or return to the homepage.</div>
-    <div class="line">C:\> <span class="cursor"></span></div>
+    <div class="line">Try typing 'help' for commands.</div>
+    <div class="input-line">
+      <span class="prompt">user@linux:~$</span>
+      <input type="text" class="cmd-input" id="cmdInput" autofocus>
+      <span class="cursor"></span>
+    </div>
   </div>
+
+<script>
+  const input = document.getElementById('cmdInput');
+  const terminal = document.getElementById('terminal');
+
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const command = input.value.trim();
+      const line = document.createElement('div');
+      line.className = 'line';
+      
+      // Fake responses
+      if (command === 'help') {
+        line.textContent = 'Available commands: help, clear, home';
+      } else if (command === 'clear') {
+        terminal.innerHTML = '';
+        addInputLine();
+        return;
+      } else if (command === 'home') {
+        window.location.href = 'index.html';
+      } else if (command === '') {
+        line.textContent = '';
+      } else {
+        line.textContent = `bash: ${command}: command not found`;
+      }
+
+      terminal.insertBefore(line, input.parentElement);
+      input.value = '';
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+  });
+
+  function addInputLine() {
+    const inputLine = document.createElement('div');
+    inputLine.className = 'input-line';
+    inputLine.innerHTML = '<span class="prompt">user@linux:~$</span><input type="text" class="cmd-input" autofocus><span class="cursor"></span>';
+    terminal.appendChild(inputLine);
+    const newInput = inputLine.querySelector('.cmd-input');
+    newInput.focus();
+
+    newInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        input.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
+      }
+    });
+  }
+</script>
 </body>
 </html>
