@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 Terminal</title>
+<title>Page does not exist</title>
 <style>
   body {
     margin: 0;
@@ -18,7 +18,7 @@
   .terminal {
     position: absolute;
     top: 20px;
-    right: 20px;
+    left: 20px;
     max-width: 600px;
     padding: 20px;
     background: rgba(0,0,0,0.8);
@@ -66,7 +66,7 @@
     <div class="line">The page you are looking for does not exist.</div>
     <div class="line">Try typing 'help' for commands.</div>
     <div class="input-line">
-      <span class="prompt">user@linux:~$</span>
+      <span class="prompt">user@solent:~$</span>
       <input type="text" class="cmd-input" id="cmdInput" autofocus>
       <span class="cursor"></span>
     </div>
@@ -91,6 +91,7 @@
         return;
       } else if (command === 'home') {
         window.location.href = 'index.html';
+        return;
       } else if (command === '') {
         line.textContent = '';
       } else {
