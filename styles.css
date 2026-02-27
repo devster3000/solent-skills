@@ -85,6 +85,8 @@ p {
     border: 1px solid #ccc;
     cursor: pointer;
     font-size: 0.9rem;
+    transition: transform 0.15s ease;
+    box-shadow: 0.15s ease;
 }
 
 .qOptionsRow input:checked + .qOptions {
@@ -96,6 +98,97 @@ p {
 .qOptionsGreen { background-color: green; color: white; }
 .qOptionsRed { background-color: red; color: white; }
 
+.questions {
+    font-size: medium;
+    color: blue;
+}
+
+/* Hover effect */
+.qOptions:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    background: #ddd; /* slightly lighter */
+}
+
+/* Active / pressed effect */
+.qOptions:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    background: #ccc;
+}
+
+/* Submit button overrides to match "primary" color */
+.submitCard {
+    background: #eee;
+    color: black;
+    border-color: black;
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    margin: 0 4px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.15s ease;
+    box-shadow: 0.15s ease;
+}
+
+.submitCard:hover {
+    background: #43a047;
+    color: white;
+}
+
+.submitCard:active {
+    background: #388e3c;
+    color: white;
+}
+
+/* Back button override (optional) */
+.backCard {
+    background: #f0f0f0;
+    color: black;
+    border-color: #e0e0e0;
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    margin: 0 4px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.15s ease;
+    box-shadow: 0.15s ease;
+}
+
+.backCard:hover {
+    background: #e0e0e0;
+}
+
+.backCard:active {
+    background: #d0d0d0;
+}
+
+/* PROGRESS BAR */
+#progressWrapper {
+    width: 100%;
+    height: 10px;
+    background: #eee;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #4caf50, #2196f3);
+    transition: width 0.3s ease;
+}
+
+/* COMPONENTS */
 
 header {
     font-size: large;
@@ -110,7 +203,8 @@ header {
 }
 
 footer {
-    background-color: white;
+    background-color: black;
+    color: white;
     font-size: small;
     text-align: center;
 
@@ -118,13 +212,6 @@ footer {
     margin-top: 12px;
     padding: 10px;
 }
-
-
-.questions {
-    font-size: medium;
-    color: blue;
-}
-
 
 
 @media (max-width: 480px) {

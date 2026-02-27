@@ -13,89 +13,20 @@
 <body>
 
 <div id="header"></div>
+
 <div class="container">
 
+    <div id="progressWrapper">
+        <div id="progressBar"></div>
+    </div>
+
     <div id="questionContainer"></div>
-    <button id="submitBtn">Submit</button>
-    <div id="result"></div>
 
 </div>
+
 <div id="footer"></div>
 
 <script src="js/data.js"></script>
-
-
-<script>
-    /* 1. Group questions by skill */
-    const grouped = {};
-    questions.forEach(q => {
-        if (!grouped[q.skill]) grouped[q.skill] = [];
-        grouped[q.skill].push(q);
-    });
-
-    /* String scale rather than numbers */
-    const scale = ["Never", "Rarely", "Sometimes", "Often", "Always"];
-
-    /* 2. Render them */
-    const container = document.getElementById("questionContainer");
-
-    Object.keys(grouped).forEach(skill => {
-        const title = document.createElement("h2");
-        title.textContent = skill.replace("_", " ").toUpperCase();
-        container.appendChild(title);
-
-        grouped[skill].forEach(q => {
-            const div = document.createElement("div");
-            div.className = "qBox";
-
-            div.innerHTML = `
-                <p class="qTitle">${q.question}</p>
-
-                <div class="qOptionsRow">
-                    ${scale.map(label => `
-                        <input 
-                            type="radio" 
-                            id="q${q.id}_${label}" 
-                            name="q${q.id}" 
-                            value="${label}"
-                        >
-                        <label class="qOptions" for="q${q.id}_${label}">
-                            ${label}
-                        </label>
-                    `).join("")}
-                </div>
-            `;
-
-            container.appendChild(div);
-        });
-    });
-
-    /* 3. Submit Handler */
-    document.getElementById("submitBtn").onclick = () => {
-        const answers = {};
-        let missing = 0;
-
-        questions.forEach(q => {
-            const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
-            answers[q.id] = selected ? selected.value : null;
-            if (!selected) missing++;
-        });
-
-        const result = document.getElementById("result");
-        result.style.display = "block";
-
-        if (missing > 0) {
-            result.innerHTML = "Please answer every question.";
-            return;
-        }
-
-        result.innerHTML = `
-            <h3>Submitted successfully!</h3>
-            <pre>${JSON.stringify(answers, null, 2)}</pre>
-        `;
-    };
-</script>
-
 <script src="js/results.js"></script>
 
 </body>

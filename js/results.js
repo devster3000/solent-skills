@@ -1,16 +1,9 @@
-/* STRING SCALE */
+document.addEventListener("DOMContentLoaded", () => {
+
+/* == CONFIG == */
+
 const scale = ["Never", "Rarely", "Sometimes", "Often", "Always"];
 
-/* Colour mapping */
-const colourMap = {
-    "Never": "redSelected",
-    "Rarely": "redSelected",
-    "Sometimes": "greySelected",
-    "Often": "greenSelected",
-    "Always": "greenSelected"
-};
-
-/* Score mapping */
 const scoreMap = {
     "Never": 0,
     "Rarely": 3,
@@ -19,122 +12,161 @@ const scoreMap = {
     "Always": 15
 };
 
-/* Group questions by skill */
-const grouped = {};
-questions.forEach(q => {
-    if (!grouped[q.skill]) grouped[q.skill] = [];
-    grouped[q.skill].push(q);
-});
+/* == SHUFFLE == */
 
-/* Render questions */
-const container = document.getElementById("questionContainer");
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
 
-Object.keys(grouped).forEach(skill => {
-    const title = document.createElement("h2");
-    title.textContent = skill.replace("_", " ").toUpperCase();
-    container.appendChild(title);
+shuffle(questions);
 
-    grouped[skill].forEach(q => {
-        const div = document.createElement("div");
-        div.className = "qBox";
+/* == STATE == */
 
-        div.innerHTML = `
-            <p class="qTitle">${q.question}</p>
+let currentIndex = 0;
+let answers = {};
+
+/* == PROGRESS == */
+
+function updateProgress() {
+    const percent = (Object.keys(answers).length / questions.length) * 100;
+    const bar = document.getElementById("progressBar");
+    if (bar) bar.style.width = percent + "%";
+}
+
+/* == RENDER QUESTION == */
+
+function renderQuestion() {
+
+    const container = document.getElementById("questionContainer");
+    if (!container) return;
+
+    const q = questions[currentIndex];
+
+    container.innerHTML = `
+        <div class="qBox">
+
+            <p class="qTitle">
+                Question ${currentIndex + 1} of ${questions.length}
+            </p>
+
+            <h3>${q.question}</h3>
 
             <div class="qOptionsRow">
                 ${scale.map(label => `
                     <input 
-                        type="radio" 
-                        id="q${q.id}_${label}" 
-                        name="q${q.id}" 
+                        type="radio"
+                        id="q${q.id}_${label}"
+                        name="q${q.id}"
                         value="${label}"
+                        ${answers[q.id] === label ? "checked" : ""}
                     >
-                    <label class="qOptions" data-value="${label}" for="q${q.id}_${label}">
+                    <label class="qOptions" for="q${q.id}_${label}">
                         ${label}
                     </label>
                 `).join("")}
             </div>
-        `;
 
-        container.appendChild(div);
-    });
-});
+            <div class="navButtons">
+                ${currentIndex > 0 ? `<button id="backBtn" class=".qOptions backCard">Back</button>` : ""}
+                <button id="submitBtn" class=".qOptions submitCard">Submit</button>
+            </div>
 
-/* Colour highlight on selection */
-document.addEventListener("change", (event) => {
-    if (event.target.type === "radio") {
-        const name = event.target.name;
+        </div>
+    `;
 
-        document
-            .querySelectorAll(`input[name="${name}"] + .qOptions`)
-            .forEach(label => label.classList.remove("redSelected", "greySelected", "greenSelected"));
-
-        const selectedLabel = document.querySelector(`label[for="${event.target.id}"]`);
-        selectedLabel.classList.add(colourMap[event.target.value]);
+    if (currentIndex > 0) {
+        document.getElementById("backBtn").addEventListener("click", prevQuestion);
     }
-});
 
-/* Submit Handler */
-document.getElementById("submitBtn").onclick = () => {
+    document.getElementById("submitBtn").addEventListener("click", submitQuestion);
+}
+
+/* == SUBMIT QUESTION == */
+
+function submitQuestion() {
+
+    const q = questions[currentIndex];
+    const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+
+    if (!selected) {
+        alert("Please select an answer before continuing.");
+        return;
+    }
+
+    answers[q.id] = selected.value;
+    updateProgress();
+
+    if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        renderQuestion();
+    } else {
+        showResults();
+    }
+}
+
+/* == BACK == */
+
+function prevQuestion() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+    }
+}
+
+/* == RESULTS == */
+
+function showResults() {
 
     const skillTotals = {};
-    let missing = 0;
+
+    document.getElementById("progressBar").style.width = "100%";
 
     questions.forEach(q => {
-        const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
-        if (!selected) {
-            missing++;
-            return;
-        }
 
-        const answer = selected.value;
+        const answer = answers[q.id];
+        if (!answer) return;
+
         const score = scoreMap[answer];
 
         if (!skillTotals[q.skill]) skillTotals[q.skill] = 0;
         skillTotals[q.skill] += score;
     });
 
-    if (missing > 0) {
-        document.getElementById("result").style.display = "block";
-        document.getElementById("result").innerHTML = "Please answer every question.";
-        return;
-    }
-
-    /* Replace questionnaire with chart */
-    document.querySelector('.container').innerHTML = `
+    document.querySelector(".container").innerHTML = `
         <h1>Your Skills Breakdown</h1>
         <canvas id="resultsChart"></canvas>
     `;
 
-    /* Draw pie chart */
-    const ctx = document.getElementById('resultsChart');
+    const ctx = document.getElementById("resultsChart");
+
     new Chart(ctx, {
-        type: 'radar',
+        type: "radar",
         data: {
             labels: Object.keys(skillTotals),
             datasets: [{
+                label: "Skill Level",
                 data: Object.values(skillTotals),
-                backgroundColor: [
-                    '#4caf50',
-                    '#2196f3',
-                    '#ff9800',
-                    '#9c27b0',
-                    '#f44336',
-                    '#009688'
-                ]
+                borderWidth: 2,
+                borderColor: "#4caf50",
+                backgroundColor: "rgba(76,175,80,0.2)",
+                pointBackgroundColor: "#4caf50"
             }]
         },
-        options: { 
+        options: {
             responsive: true,
             scales: {
-                angleLines: { color: '#ccc'},
-                grid: { color: '#ddd' },
                 suggestedMin: 0,
-                suggestedMax: 60,
-                pointLabels: {
-                    font: { size: 14 }
-                }
+                suggestedMax: 60
             }
         }
     });
-};
+}
+
+/* == INIT == */
+
+renderQuestion();
+
+});
