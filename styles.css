@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: system-ui, Arial, sans-serif;
-    background: url('/assets/solent-skills.png');
+    background: url('assets/background.jpg');
     padding: 15px;
 }
 
@@ -218,6 +218,7 @@ footer {
 
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.2rem; }
+    body { background: #BDC8FF; }
 
     
 
