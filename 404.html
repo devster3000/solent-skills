@@ -82,7 +82,6 @@
       const line = document.createElement('div');
       line.className = 'line';
       
-      // Fake responses
       if (command === 'help') {
         line.textContent = 'Available commands: help, clear, home';
       } else if (command === 'clear') {
@@ -107,7 +106,7 @@
   function addInputLine() {
     const inputLine = document.createElement('div');
     inputLine.className = 'input-line';
-    inputLine.innerHTML = '<span class="prompt">user@linux:~$</span><input type="text" class="cmd-input" autofocus><span class="cursor"></span>';
+    inputLine.innerHTML = '<span class="prompt">user@solent:~$</span><input type="text" class="cmd-input" autofocus><span class="cursor"></span>';
     terminal.appendChild(inputLine);
     const newInput = inputLine.querySelector('.cmd-input');
     newInput.focus();

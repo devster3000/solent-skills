@@ -17,6 +17,12 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.08);
 }
 
+header img {
+    width: 100%;
+    height: auto;
+    max-height: 120px; /* adjust as needed */
+    display: block;
+}
 
 h1 {
     font-size: 1.8rem;
@@ -234,5 +240,13 @@ footer {
     .qOptionsRow {
         flex-direction: column;
         gap: 8px;
+    }
+
+    .submitCard {
+        margin-top: 12px;
+    }
+
+    .backCard {
+        margin-top: 32px;
     }
 }

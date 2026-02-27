@@ -6,143 +6,43 @@ const ages = ["8-13", "14-19"]
 const skills_cluster = ["Digital & Digital Skills", "Communication & Interpersonal Skills", "Problem Solving & Adaptability", "Creativity & Innovation", "Organisational & Commercial Awareness", "Leadership & Teamwork"]
 
 
-/* QUESTIONS */
+/* == QUESTIONS == */
 const questions = [
-    
-    /* DIGITAL */
-    {
-        id: 1,
-        skill: "digital",
-        question: "I feel confident learning new digital tools without needing extensive guidance"
-    },
-    {
-        id: 2,
-        skill: "digital",
-        question: "I can troubleshoot basic technical issues on my own"
-    },
-    {
-        id: 3,
-        skill: "digital",
-        question: "I use digital tools to organise my work efficiently"
-    },
-    {
-        id: 4,
-        skill: "digital",
-        question: "I stay up-to-date with new technologies that could improve my productivity"
-    },
 
+    /* DIGITAL */
+    { id: 1, skill: "digital", question: "I can learn new software quickly without needing step-by-step instructions." },
+    { id: 2, skill: "digital", question: "I feel confident managing my digital privacy and security online." },
+    { id: 3, skill: "digital", question: "I use online tools to collaborate effectively with others." },
+    { id: 4, skill: "digital", question: "I can troubleshoot common hardware or device issues independently." },
 
     /* COMMUNICATION */
-    {
-        id: 5,
-        skill: "communication",
-        question: "I communicate my ideas clearly when speaking to others"
-    },
-    {
-        id: 6,
-        skill: "communication",
-        question: "I'm comfortable giving and receiving constructive feedback"
-    },
-    {
-        id: 7,
-        skill: "communication",
-        question: "I listen carefully to others before responding"
-    },
-    {
-        id: 8,
-        skill: "communication",
-        question: "I adapt my communication style depending on who I'm speaking to"
-    },
-
+    { id: 5, skill: "communication", question: "I explain my ideas in writing clearly and concisely." },
+    { id: 6, skill: "communication", question: "I ask questions to clarify understanding when I’m unsure." },
+    { id: 7, skill: "communication", question: "I adjust my communication depending on who I’m talking to." },
+    { id: 8, skill: "communication", question: "I can resolve conflicts or disagreements calmly and respectfully." },
 
     /* PROBLEM SOLVING */
-    {
-        id: 9,
-        skill: "problem_solving",
-        question: "I can break down complex problems into manageable steps"
-    },
-    {
-        id: 10,
-        skill: "problem_solving",
-        question: "I stay calm and focused when unexpected challenged arise"
-    },
-    {
-        id: 11,
-        skill: "problem_solving",
-        question: "I can adapt quickly when plans or situations change"
-    },
-    {
-        id: 12,
-        skill: "problem_solving",
-        question: "I enjoy finding creative solutions to difficult problems"
-    },
-
+    { id: 9, skill: "problem_solving", question: "I can identify the root cause of a problem quickly." },
+    { id: 10, skill: "problem_solving", question: "I think of multiple solutions before making a decision." },
+    { id: 11, skill: "problem_solving", question: "I remain flexible when unexpected changes happen." },
+    { id: 12, skill: "problem_solving", question: "I learn from mistakes to improve future outcomes." },
 
     /* CREATIVITY */
-    {
-        id: 13,
-        skill: "creativity",
-        question: "I often come up with new ideas or ways to improve existing processes"
-    },
-    {
-        id: 14,
-        skill: "creativity",
-        question: "I'm comfortable thinking outside the box to generate new tasks"
-    },
-    {
-        id: 15,
-        skill: "creativity",
-        question: "I take inspiration from different sources to generate new ideas"
-    },
-    {
-        id: 16,
-        skill: "creativity",
-        question: "I enjoy experimenting with new appraches, even if they might now work perfectly"
-    },
-
+    { id: 13, skill: "creativity", question: "I experiment with new ways of solving tasks or challenges." },
+    { id: 14, skill: "creativity", question: "I combine ideas from different areas to make something new." },
+    { id: 15, skill: "creativity", question: "I generate creative solutions even when resources are limited." },
+    { id: 16, skill: "creativity", question: "I enjoy brainstorming and coming up with original ideas." },
 
     /* ORGANISATIONAL AWARENESS */
-    {
-        id: 17,
-        skill: "organisational_awareness",
-        question: "I understand how my tasks contribute to wider goals or objectives"
-    },
-    {
-        id: 18,
-        skill: "organisational_awareness",
-        question: "I manage my time effectively to meet deadlines"
-    },
-    {
-        id: 19,
-        skill: "organisational_awareness",
-        question: "I consider the impact of decisions on productivity or resources"
-    },
-    {
-        id: 20,
-        skill: "organisational_awareness",
-        question: "I can prioritise tasks based on urgency and importance"
-    },
-
+    { id: 17, skill: "organisational_awareness", question: "I plan my work to meet deadlines without rushing." },
+    { id: 18, skill: "organisational_awareness", question: "I understand how my work impacts the team or organisation." },
+    { id: 19, skill: "organisational_awareness", question: "I evaluate decisions based on their potential consequences." },
+    { id: 20, skill: "organisational_awareness", question: "I organise tasks efficiently to achieve my goals." },
 
     /* TEAMWORK */
-    {
-        id: 21,
-        skill: "teamwork",
-        question: "I contribute positively to group discussions and activites"
-    },
-    {
-        id: 22,
-        skill: "teamwork",
-        question: "I support others in the team when they need help"
-    },
-    {
-        id: 23,
-        skill: "teamwork",
-        question: "I can take the lead on tasks when necessary"
-    },
-    {
-        id: 24,
-        skill: "teamwork",
-        question: "I value different perspectives and encourage collaboration"
-    }
-]
+    { id: 21, skill: "teamwork", question: "I motivate others to achieve a shared goal." },
+    { id: 22, skill: "teamwork", question: "I listen to others’ opinions and incorporate their ideas." },
+    { id: 23, skill: "teamwork", question: "I take responsibility when leading a group project." },
+    { id: 24, skill: "teamwork", question: "I support team members in achieving their tasks." }
+
+];
