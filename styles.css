@@ -97,6 +97,8 @@ p {
 }
 
 .navButtons {
+    display: flex;
+    justify-content: space-between;
     margin-top: 12px;
 }
 
@@ -121,7 +123,7 @@ p {
     background: #ddd; /* slightly lighter */
 }
 
-/* Active / pressed effect */
+/* Pressed effect */
 .qOptions:active {
     transform: translateY(1px);
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -137,6 +139,22 @@ p {
     text-align: center;
     padding: 12px;
     margin: 0 4px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.15s ease;
+    box-shadow: 0.15s ease;
+}
+
+.firstSubmitCard {
+    background: #eee;
+    color: black;
+    border-color: black;
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    margin: 0 4px;
     margin-top: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -144,6 +162,16 @@ p {
     font-size: 0.9rem;
     transition: transform 0.15s ease;
     box-shadow: 0.15s ease;
+}
+
+.firstSubmitCard:hover {
+    background: #43a047;
+    color: white;
+}
+
+.firstSubmitCard:active {
+    background: #388e3c;
+    color: white;
 }
 
 .submitCard:hover {
@@ -227,7 +255,7 @@ footer {
 
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.2rem; }
-    body { background: #BDC8FF; }
+    body { background: #7da6ff; }
 
     
 
