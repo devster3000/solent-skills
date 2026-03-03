@@ -268,6 +268,18 @@ footer {
         font-size: 0.85rem;
     }
 
+    .navButtons {
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+        box-sizing: border-box;
+
+        flex-direction: row;
+        gap: 8px;
+
+        font-size: 0.85rem;
+    }
+
     .qOptionsRow {
         flex-direction: column;
         gap: 8px;
