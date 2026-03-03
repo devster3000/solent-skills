@@ -331,14 +331,14 @@ footer {
 
     .firstSubmitCard {
         background: #292929;
-        color: black;
-        border-color: black;
+        color: white;
+        border-color: white;
     }
 
     .backCard {
         background: #292929;
         color: white;
-        border-color: #e0e0e0;
+        border-color: white;
     }
 
     .backCard:hover {
