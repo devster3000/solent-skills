@@ -81,8 +81,12 @@ function renderQuestion() {
 
     if (currentIndex > 0) {
         document.getElementById("backBtn").addEventListener("click", prevQuestion);
+        document.getElementById("submitBtn").addEventListener("click", submitQuestion);
     }
-    document.getElementById("submitBtn").addEventListener("click", submitQuestion);
+
+    if (currentIndex <= 0) {
+        document.getElementById("firstSubmitBtn").addEventListener("click", submitQuestion);
+    }
 }
 
 /* == SUBMIT QUESTION == */
