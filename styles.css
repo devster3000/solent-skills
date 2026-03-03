@@ -1,5 +1,3 @@
-
-
 body {
     margin: 0;
     font-family: system-ui, Arial, sans-serif;
@@ -241,8 +239,6 @@ footer {
     h2 { font-size: 1.2rem; }
     body { background: linear-gradient(45deg, #7da6ff, #a9c4ff); }
 
-    
-
     .qOptions {
         width: 100%;
         padding: 10px;
@@ -270,15 +266,16 @@ footer {
 
 }
 
+
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #727272;
-        color: white;
+        background: #141414
     }
 
     .container {
-        background: #383838;
+        background: #1F1F1F;
     }
+
 
     h1 {
         color: white;
@@ -296,11 +293,8 @@ footer {
         color: white;
     }
 
-
-
     .qBox {
-        background: #969696;
-        border: 1px solid #ddd;
+        background: #464646;
     }
 
     /* Question Title */
@@ -314,87 +308,72 @@ footer {
     }
 
     .qOptions {
-        background: #727272;
-        border: 1px solid #ccc;
         color: white;
+        background: #292929;
     }
 
     /* Hover effect */
     .qOptions:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        background: #969696; /* slightly lighter */
+        background: #383838; /* slightly lighter */
     }
 
     /* Pressed effect */
     .qOptions:active {
-        transform: translateY(1px);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        background: #727272;
-        color: white;
+        background: #383838;
     }
 
     /* Submit button overrides to match "primary" color */
     .submitCard {
-        background: #727272;
+        background: #292929;
         color: white;
-        border-color: white;
+        border-color: black;
     }
 
     .firstSubmitCard {
-        background: #727272;
-        color: white;
-        border-color: white;
-    }
-
-    .firstSubmitCard:hover {
-        background: #43a047;
-        color: white;
-    }
-
-    .firstSubmitCard:active {
-        background: #388e3c;
-        color: white;
-    }
-
-    .submitCard:hover {
-        background: #43a047;
-        color: white;
-    }
-
-    .submitCard:active {
-        background: #388e3c;
-        color: white;
+        background: #292929;
+        color: black;
+        border-color: black;
     }
 
     .backCard {
-        background: #727272;
+        background: #292929;
         color: white;
         border-color: #e0e0e0;
     }
 
     .backCard:hover {
-        background: #727272;
+        background: #383838;
     }
 
     .backCard:active {
-        background: #727272;
+        background: #383838;
     }
 
     /* PROGRESS BAR */
     #progressWrapper {
-        background: #bbbbbb;
+        background: #292929;
+    }
+
+    #progressBar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #4caf50, #2196f3);
+        transition: width 0.3s ease;
     }
 
     /* COMPONENTS */
-
     header {
-        background-color: #383838;
-        color: white;
+        background-color: #1F1F1F;
     }
 
     footer {
-        background-color: #383838;
+        background-color: #1F1F1F;
+        color: white;
     }
-
 }
+
+/* 
+Body bg: #141414
+Container bg: #1F1F1F
+Qbox BG: #292929
+Hover: #383838
