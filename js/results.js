@@ -71,10 +71,10 @@ function renderQuestion() {
             </div>
 
             <div class="navButtons">
-                ${currentIndex > 0 ? `<button id="backBtn" class="qOptions backCard">Back</button>` : ""}
-                <button id="submitBtn" class="qOptions submitCard">Submit</button>
+                ${currentIndex > 0 ? `<button id="backBtn" class="qOptions backCard">Back</button>
+                                    <button id="submitBtn" class="qOptions submitCard">Submit</button>` : ""}
 
-                ${currentIndex <= 0 ? `<button id="firstSubmitBtn" class="qOptions firstSubmitCard">Submit</button` : ""}
+                ${currentIndex <= 0 ? `<button id="firstSubmitBtn" class="qOptions firstSubmitCard">Submit</button>` : ""}
             </div>
         </div>
     `;
