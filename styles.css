@@ -102,6 +102,21 @@ p {
     margin-top: 12px;
 }
 
+.navButtons button {
+    flex: 1;
+    padding: 12px;
+    margin: 0 4px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    
+    font-size: 0.9rem;
+    text-align: center;
+
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    box-sizing: border-box;
+}
+
 .qOptionsRow input:checked + .qOptions {
     background: #4CAF50;
     color: white;
@@ -135,33 +150,12 @@ p {
     background: #eee;
     color: black;
     border-color: black;
-    flex: 1;
-    text-align: center;
-    padding: 12px;
-    margin: 0 4px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: transform 0.15s ease;
-    box-shadow: 0.15s ease;
 }
 
 .firstSubmitCard {
     background: #eee;
     color: black;
     border-color: black;
-    flex: 1;
-    text-align: center;
-    padding: 12px;
-    margin: 0 4px;
-    margin-top: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: transform 0.15s ease;
-    box-shadow: 0.15s ease;
 }
 
 .firstSubmitCard:hover {
@@ -188,16 +182,6 @@ p {
     background: #f0f0f0;
     color: black;
     border-color: #e0e0e0;
-    flex: 1;
-    text-align: center;
-    padding: 12px;
-    margin: 0 4px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: transform 0.15s ease;
-    box-shadow: 0.15s ease;
 }
 
 .backCard:hover {
@@ -269,15 +253,13 @@ footer {
     }
 
     .navButtons {
-        width: 100%;
-        padding: 10px;
-        margin-top: 12px;
-        box-sizing: border-box;
-
         flex-direction: column;
         gap: 8px;
+    }
 
-        font-size: 0.85rem;
+    .navButtons button {
+        width: 100%;
+        margin: 0;
     }
 
     .qOptionsRow {
@@ -285,11 +267,4 @@ footer {
         gap: 8px;
     }
 
-    .submitCard {
-        margin-top: 12px;
-    }
-
-    .backCard {
-        margin-top: 32px;
-    }
 }
