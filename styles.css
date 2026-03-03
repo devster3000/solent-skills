@@ -239,7 +239,7 @@ footer {
 
     h1 { font-size: 1.5rem; }
     h2 { font-size: 1.2rem; }
-    body { background: #7da6ff; }
+    body { background: linear-gradient(45deg, #7da6ff, #a9c4ff); }
 
     
 
@@ -254,7 +254,7 @@ footer {
 
     .navButtons {
         flex-direction: column;
-        margin-top: 24px;
+        margin-top: 32px;
         gap: 8px;
     }
 
