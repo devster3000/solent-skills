@@ -106,9 +106,10 @@ p {
     flex: 1;
     padding: 12px;
     margin: 0 4px;
+    margin-top: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    
+
     font-size: 0.9rem;
     text-align: center;
 
