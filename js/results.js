@@ -173,6 +173,14 @@ function showResults() {
     });
 
     // Radar chart
+    // Detect dark mode
+    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    // Chart color settings for light/dark mode
+    const gridColor = isDark ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.15)";
+    const labelColor = isDark ? "#ffffff" : "#000000";
+    const tickColor = isDark ? "#cccccc" : "#666666";
+    const legendColor = labelColor;
     const labels = Object.keys(skillTotals).map(skill => skillMap[skill].name);
     const dataPoints = Object.keys(skillTotals).map(skill =>
         Math.round((skillTotals[skill] / (skillCounts[skill] * 15)) * 100)
@@ -194,20 +202,36 @@ function showResults() {
             }]
         },
         options: {
-            responsive: true,
-            scales: {
-            r: { // 'r' is the radial axis for radar charts
-                min: 0,
-                max: 100,
-                ticks: {
-                    stepSize: 20 // optional, for nicer tick intervals
-                },
-                pointLabels: {
-                    font: { size: 14 }
-                }
-            }
+    responsive: true,
+    plugins: {
+        legend: {
+            labels: {
+                color: legendColor
             }
         }
+    },
+    scales: {
+        r: {
+            min: 0,
+            max: 100,
+            ticks: {
+                stepSize: 20,
+                color: tickColor,
+                backdropColor: "transparent"
+            },
+            angleLines: {
+                color: gridColor
+            },
+            grid: {
+                color: gridColor
+            },
+            pointLabels: {
+                font: { size: 14 },
+                color: labelColor
+            }
+        }
+    }
+}
     });
 }
 
