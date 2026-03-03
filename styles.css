@@ -337,6 +337,27 @@ footer {
         border-color: #464646;
     }
 
+    .firstSubmitCard:hover {
+        background: #43a047;
+        color: white;
+    }
+
+    .firstSubmitCard:active {
+        background: #388e3c;
+        color: white;
+    }
+
+    .submitCard:hover {
+        background: #43a047;
+        color: white;
+    }
+
+    .submitCard:active {
+        background: #388e3c;
+        color: white;
+    }
+
+
     .backCard {
         background: #292929;
         color: white;
