@@ -96,6 +96,10 @@ p {
     box-shadow: 0.15s ease;
 }
 
+.navButtons {
+    margin-top: 12px;
+}
+
 .qOptionsRow input:checked + .qOptions {
     background: #4CAF50;
     color: white;
@@ -152,7 +156,6 @@ p {
     color: white;
 }
 
-/* Back button override (optional) */
 .backCard {
     background: #f0f0f0;
     color: black;
@@ -161,7 +164,6 @@ p {
     text-align: center;
     padding: 12px;
     margin: 0 4px;
-    margin-top: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
     cursor: pointer;
