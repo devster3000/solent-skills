@@ -269,3 +269,128 @@ footer {
     }
 
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: white;
+    }
+
+    .container {
+        background: 383838;
+    }
+
+
+    h1 {
+        color: white;
+    }
+
+    h2 {
+        color: white;
+    }
+
+    h3 {
+        color: white;
+    }
+
+    p {
+        color: white;
+    }
+
+
+
+    .qBox {
+        background: #969696;
+        border: 1px solid #ddd;
+    }
+
+    /* Question Title */
+    .qTitle {
+        color: white;
+    }
+
+    /* Optional description */
+    .qDescription {
+        color: white;
+    }
+
+    .qOptions {
+        background: #727272;
+        border: 1px solid #ccc;
+        color: white;
+    }
+
+    /* Hover effect */
+    .qOptions:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        background: #969696; /* slightly lighter */
+    }
+
+    /* Pressed effect */
+    .qOptions:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        background: #727272;
+        color: white;
+    }
+
+    /* Submit button overrides to match "primary" color */
+    .submitCard {
+        background: #727272;
+        color: white;
+        border-color: white;
+    }
+
+    .firstSubmitCard {
+        background: #727272;
+        color: white;
+        border-color: white;
+    }
+
+    .firstSubmitCard:hover {
+        background: #43a047;
+        color: white;
+    }
+
+    .firstSubmitCard:active {
+        background: #388e3c;
+        color: white;
+    }
+
+    .submitCard:hover {
+        background: #43a047;
+        color: white;
+    }
+
+    .submitCard:active {
+        background: #388e3c;
+        color: white;
+    }
+
+    .backCard {
+        background: #727272;
+        color: white;
+        border-color: #e0e0e0;
+    }
+
+    .backCard:hover {
+        background: #727272;
+    }
+
+    .backCard:active {
+        background: #727272;
+    }
+
+    /* PROGRESS BAR */
+    #progressWrapper {
+        background: #bbbbbb;
+    }
+
+    /* COMPONENTS */
+
+    header {
+        background-color: #383838;
+        color: white;
+    }
+
+}
