@@ -106,7 +106,6 @@ p {
     flex: 1;
     padding: 12px;
     margin: 0 4px;
-    margin-top: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
 
@@ -255,6 +254,7 @@ footer {
 
     .navButtons {
         flex-direction: column;
+        margin-top: 12px;
         gap: 8px;
     }
 
