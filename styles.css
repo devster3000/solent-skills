@@ -295,6 +295,7 @@ footer {
 
     .qBox {
         background: #292929;
+        border-color: #464646;
     }
 
     /* Question Title */
@@ -310,6 +311,7 @@ footer {
     .qOptions {
         color: white;
         background: #292929;
+        border-color: #464646;
     }
 
     /* Hover effect */
@@ -326,19 +328,19 @@ footer {
     .submitCard {
         background: #292929;
         color: white;
-        border-color: black;
+        border-color: #464646;
     }
 
     .firstSubmitCard {
         background: #292929;
         color: white;
-        border-color: white;
+        border-color: #464646;
     }
 
     .backCard {
         background: #292929;
         color: white;
-        border-color: white;
+        border-color: #464646;
     }
 
     .backCard:hover {
@@ -376,5 +378,6 @@ footer {
 Body bg: #141414
 Container bg: #1F1F1F
 Qbox BG: #292929
+Borders: #464646
 Hover: #383838
 */
