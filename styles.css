@@ -269,7 +269,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background: #141414
+        background: linear-gradient(180deg, #121212 0%, #0e0e0e 100%);
     }
 
     .container {
