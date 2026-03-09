@@ -46,6 +46,7 @@ function updateProgress() {
 
 /* == RENDER QUESTION == */
 
+
 function renderQuestion() {
     const container = document.getElementById("questionContainer");
     if (!container) return;
@@ -151,6 +152,7 @@ function showResults() {
 
     const container = document.querySelector(".container");
     container.innerHTML = `
+        
         <h1>Your Skills Breakdown</h1>
         <canvas id="resultsChart" style="margin-top:20px;"></canvas>
         <div id="topSkills" style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;"></div>
@@ -233,6 +235,17 @@ function showResults() {
     }
 }
     });
+
+    
+    setTimeout(() => {
+        confetti({
+            particleCount: 120,
+            spread: 70,
+            origin: { x: 0.5, y: 0.6 },
+            colors: ['#2196f3', '#ffeb3b', '#ff9800', '#9c27b0', '#f44336', '#4caf50']
+        });
+    }, 300);
+
 }
 
 /* == INIT == */
