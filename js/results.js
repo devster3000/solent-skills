@@ -17,7 +17,7 @@ const skillMap = {
     "communication": { name: "Communication", color: "#ffeb3b" },
     "problem_solving": { name: "Problem Solving", color: "#ff9800" },
     "creativity": { name: "Creativity", color: "#9c27b0" },
-    "organisational_awareness": { name: "Organisations", color: "#f44336" },
+    "commerce": { name: "Organisations", color: "#f44336" },
     "teamwork": { name: "Teamwork", color: "#4caf50" }
 };
 
