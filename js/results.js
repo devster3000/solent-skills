@@ -120,11 +120,33 @@ function prevQuestion() {
     }
 }
 
+/* == CAREERS CALCULATION == */
+function getRankedCareers(skillA, skillB) {
+    const ranked = careers.map(c => {
+        let score = 0;
+        if (
+            c.skill1 === skillA || c.skill1 === skillB
+        ) score ++;
+        if (
+            c.skill2 === skillA || c.skill2 === skillB
+        ) score++;
+
+        return{
+            ...c, score
+        };
+    });
+
+    ranked.sort((a,b) => b.score - a.score);
+
+    return ranked.slice(0,6);
+}
+
 /* == RESULTS == */
 
 function showResults() {
     const skillTotals = {};
     const skillCounts = {};
+
 
     document.getElementById("progressBar").style.width = "100%";
 
@@ -150,12 +172,28 @@ function showResults() {
     const sortedSkills = Object.keys(skillPercentages).sort((a, b) => skillPercentages[b] - skillPercentages[a]);
     const topSkills = sortedSkills.slice(0, 2);
 
+    const userPrimary = topSkills[0];
+    const userSecondary = topSkills[1];
+
+    const recommendedCareers = getRankedCareers(userPrimary, userSecondary);
     const container = document.querySelector(".container");
     container.innerHTML = `
         
         <h1>Your Skills Breakdown</h1>
         <canvas id="resultsChart" style="margin-top:20px;"></canvas>
         <div id="topSkills" style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;"></div>
+
+        <h2>Recommended Careers</h2>
+        <div id="careerList">
+            ${recommendedCareers.map(c => `
+                <div class="careerCard">
+                    <h3>${c.career}</h3>
+                    <p><strong>Primary Skill:</strong> ${skillMap[c.skill1].name}</p>
+                    <p><strong>Secondary Skill:</strong> ${skillMap[c.skill2].name}</p>
+                </div>
+                
+                `).join("")}
+        </div>
     `;
 
     // Render top 2 skills
@@ -233,6 +271,7 @@ function showResults() {
             }
         }
     }
+
 }
     });
 

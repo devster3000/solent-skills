@@ -203,8 +203,16 @@ p {
 #progressBar {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #4caf50, #2196f3);
+    background: linear-gradient(90deg, #2196f3, #ffeb3b, #ff9800, #9c27b0, #f44336, #4caf50);
     transition: width 0.3s ease;
+}
+
+.careerCard {
+    margin: 20px 0;
+    padding: 15px;
+    background: #fafafa;
+    border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
 /* COMPONENTS */
@@ -377,11 +385,10 @@ footer {
         background: #292929;
     }
 
-    #progressBar {
-        height: 100%;
-        width: 0%;
-        background: linear-gradient(90deg, #4caf50, #2196f3);
-        transition: width 0.3s ease;
+    .careerCard {
+        color: white;
+        background: #292929;
+        border-color: #464646;
     }
 
     /* COMPONENTS */
