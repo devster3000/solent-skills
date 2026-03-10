@@ -270,7 +270,7 @@ function showResults() {
             particleCount: 120,
             spread: 70,
             origin: { x: 0.5, y: 0.6 },
-            colors: ['#2196f3', '#ffeb3b', '#ff9800', '#9c27b0', '#f44336', '#4caf50']
+            colors: ['#2196f3', '#cabc3a', '#ff9800', '#9c27b0', '#f44336', '#4caf50']
         });
     }, 300);
 
