@@ -183,17 +183,6 @@ function showResults() {
         <canvas id="resultsChart" style="margin-top:20px;"></canvas>
         <div id="topSkills" style="margin-top:20px; display:flex; gap:10px; flex-wrap:wrap;"></div>
 
-        <h2>Recommended Careers</h2>
-        <div id="careerList">
-            ${recommendedCareers.map(c => `
-                <div class="careerCard">
-                    <h3>${c.career}</h3>
-                    <p><strong>Primary Skill:</strong> ${skillMap[c.skill1].name}</p>
-                    <p><strong>Secondary Skill:</strong> ${skillMap[c.skill2].name}</p>
-                </div>
-                
-                `).join("")}
-        </div>
     `;
 
     // Render top 2 skills
