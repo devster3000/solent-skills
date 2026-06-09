@@ -199,6 +199,7 @@ else {
 /* CALCULATIONS */
 
 function showResults() {
+console.log("showResults was called.");
 const totals = {};
 const counts = {};
 

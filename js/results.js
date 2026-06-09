@@ -120,26 +120,26 @@ function prevQuestion() {
     }
 }
 
-/* == CAREERS CALCULATION == */
-function getRankedCareers(skillA, skillB) {
-    const ranked = careers.map(c => {
-        let score = 0;
-        if (
-            c.skill1 === skillA || c.skill1 === skillB
-        ) score ++;
-        if (
-            c.skill2 === skillA || c.skill2 === skillB
-        ) score++;
+// /* == CAREERS CALCULATION == */
+// function getRankedCareers(skillA, skillB) {
+//     const ranked = careers.map(c => {
+//         let score = 0;
+//         if (
+//             c.skill1 === skillA || c.skill1 === skillB
+//         ) score ++;
+//         if (
+//             c.skill2 === skillA || c.skill2 === skillB
+//         ) score++;
 
-        return{
-            ...c, score
-        };
-    });
+//         return{
+//             ...c, score
+//         };
+//     });
 
-    ranked.sort((a,b) => b.score - a.score);
+//     ranked.sort((a,b) => b.score - a.score);
 
-    return ranked.slice(0,6);
-}
+//     return ranked.slice(0,6);
+// }
 
 /* == RESULTS == */
 
@@ -175,7 +175,7 @@ function showResults() {
     const userPrimary = topSkills[0];
     const userSecondary = topSkills[1];
 
-    const recommendedCareers = getRankedCareers(userPrimary, userSecondary);
+    // const recommendedCareers = getRankedCareers(userPrimary, userSecondary);
     const container = document.querySelector(".container");
     container.innerHTML = `
         
